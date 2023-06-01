@@ -49,7 +49,7 @@ class UnsplashData:
             tf_test_dataset = tf_test_dataset.shuffle(buffer_size=num_samples, reshuffle_each_iteration=False)
         tf_train_dataset = tf_train_dataset.batch(batch_size)
         tf_test_dataset = tf_test_dataset.batch(batch_size)
-        return tf_train_dataset, tf_test_dataset
+        return tf_train_dataset, tf_test_dataset, metadata
 
     def get_images_and_captions(self) -> pd.DataFrame:
         photos_path = self.dir + "/photos/"
